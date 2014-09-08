@@ -8,12 +8,12 @@ from email.MIMEMultipart import MIMEMultipart
 from email.MIMEText import MIMEText
 
 ## Usage findmoto.py [zipcode] [distance]
-
+bbyapikey = ""
 zipcode = str(sys.argv[1])
 distance = str(sys.argv[2])
 body = ''
 x = 0
-url = 'http://api.remix.bestbuy.com/v1/stores(area(' + zipcode + ',' + distance + '))+products(sku%20in(8307143))?format=json&show=storeId,name,products.sku,products.name&apiKey=YOURAPIKEY'
+url = 'http://api.remix.bestbuy.com/v1/stores(area(' + zipcode + ',' + distance + '))+products(sku%20in(8307143))?format=json&show=storeId,name,products.sku,products.name&apiKey=' + bbyapikey
 req = urllib2.Request(url)
 reply = urllib2.urlopen(req)
 js = json.load(reply)
